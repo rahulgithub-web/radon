@@ -17,6 +17,7 @@ const upperCase = function() {
     const res = text.toUpperCase();
     return res;
 }
+upperCase();
 
 module.exports.trims = trim;
 module.exports.lower = lowerCase;

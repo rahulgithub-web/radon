@@ -1,0 +1,10 @@
+router.get('/candidates', function (req, res) {
+    let candidates = ["Akash", "Rahul"];
+    res.send(candidates);
+});
+
+router.get('/candidates:name', function (req, res) {
+    console.log('The request object is: ' + JSON.stringify(req.params));
+    console.log("Candidate names is "+ req.params.name);
+    res.send('Done');
+});

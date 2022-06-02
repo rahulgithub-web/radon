@@ -5,7 +5,7 @@ const printDate = function() {
 printDate();  
 
 const printMonth = function() {
-    const month = new Date().getMonth(); 
+    const month = new Date().getMonth() + 1; 
     return month;
 }
 printMonth();
