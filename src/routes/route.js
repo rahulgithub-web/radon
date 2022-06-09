@@ -10,4 +10,6 @@ router.get("/getBooksByChetanBhagat", bookController.getBooksByChetanBhagat);
 
 router.get("/updateBookPrice", bookController.updateBookPrice);
 
+router.get("/getBooksByCost", bookController.getBooksByCost);
+
 module.exports = router;
