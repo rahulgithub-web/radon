@@ -30,7 +30,17 @@ const updateBookPrice = async function (req, res) {
     res.send({ msg: authorsData });    
 };
 
+const getBooksByCost = async function (req, res) {
+    let data = await bookModel.find({ price: { $gte: 50, $lte: 100 } }).select({ author_id: 1 });
+    let id = data.map((e) => e.author_id);
+    let result = [];
+    const author = await authorModel.find({ author_id: id }).select({ author_name: 1 });
+    result.push(author);
+    res.send({ msg: result });
+};
+
 module.exports.createBook= createBook;
 module.exports.createAuthor = createAuthor;
 module.exports.getBooksByChetanBhagat = getBooksByChetanBhagat;
 module.exports.updateBookPrice = updateBookPrice;
+module.exports.getBooksByCost = getBooksByCost;
