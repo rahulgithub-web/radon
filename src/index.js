@@ -20,3 +20,6 @@ app.use("/", route);
 app.listen(port || 3000, function () {
   console.log("Express listening on port " + (port || 3000));
 });
+
+
+const hello = name => "Hello" + name;

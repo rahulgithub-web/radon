@@ -1,4 +1,4 @@
-const bookModel = require("../model/bookModel");
+const bookModel = require("../models/bookModel");
 
 const createBook = async function (req, res) {
     let book = req.body; 
@@ -30,7 +30,7 @@ const getBooksWithAuthorDetails = async function (req, res) {
 
 module.exports.getBooksWithAuthorDetails = getBooksWithAuthorDetails;
 module.exports.createBook = createBook;
-module.exports.priceIncrease = priceIncrease;
+// module.exports.priceIncrease = priceIncrease;
 
 
 
