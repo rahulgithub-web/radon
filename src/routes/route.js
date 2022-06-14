@@ -15,6 +15,6 @@ router.get("/users/:userId", userController.getUserData);
 
 // router.put("/users/:userId", userController.updateUser);
 
-// router.put("deleted/:userId", userController.deleteUser);
+// router.put("deleted/:userId", userController.isdeleted);
 
 module.exports = router;
