@@ -8,7 +8,7 @@ const valHeader = function (req, res, next) {
     return res.send({ msg: "header is missing" });
   }
 
-  if (appType == "true") {
+  if (appType === "true") {
     req.appTypeFree = true;
   } else {
     req.appTypeFree = false;
