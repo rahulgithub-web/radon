@@ -40,5 +40,4 @@ If present, check that the token is valid.
 + You have to implement authorisation for fetch user details, update user and delete user apisg
 + You have to move this similar code in all three apis in a suitable middleware
 
-``` 
-
+```

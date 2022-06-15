@@ -31,10 +31,10 @@ const loginUser = async function (req, res) {
   let token = jwt.sign(
     {
       userId: user._id.toString(),
-      batch: "thorium",
+      batch: "radon",
       organisation: "FUnctionUp",
     },
-    "functionup-thorium"
+    "functionup-radon"
   );
   res.setHeader("x-auth-token", token);
   res.send({ status: true, data: token });
@@ -54,7 +54,7 @@ const getUserData = async function (req, res) {
   // Input 1 is the token to be decoded
   // Input 2 is the same secret with which the token was generated
   // Check the value of the decoded token yourself
-  let decodedToken = jwt.verify(token, "functionup-thorium");
+  let decodedToken = jwt.verify(token, "functionup-radon");
   if (!decodedToken)
     return res.send({ status: false, msg: "token is invalid" });
 
@@ -91,7 +91,7 @@ const postMessage = async function (req, res) {
     // Return a different error message in both these cases
     let token = req.headers["x-auth-token"]
     if(!token) return res.send({status: false, msg: "token must be present in the request header"})
-    let decodedToken = jwt.verify(token, 'functionup-thorium')
+    let decodedToken = jwt.verify(token, 'functionup-radon')
 
     if(!decodedToken) return res.send({status: false, msg:"token is not valid"})
     
