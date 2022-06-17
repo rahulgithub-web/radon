@@ -7,8 +7,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let url = "mongodb+srv://axios:yUctOFWf8YN0wcC2@cluster0.dkho9cl.mongodb.net/test";
+let port = process.env.PORT || 5000;
 
-mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzotr.mongodb.net/Pritesh8769811-DB?retryWrites=true&w=majority", {
+mongoose.connect(url, {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
@@ -24,6 +26,8 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 app.use('/', route);
 
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log('Express app running on port ' + (process.env.PORT || 3000))
+app.listen(port, function () {
+    console.log('Express app running on port ' + (port))
 });
+
+// yUctOFWf8YN0wcC2
